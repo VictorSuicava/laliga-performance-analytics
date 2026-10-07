@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 852.34781770561813,
+            "y": 244.43372558874
+          },
+          "nodeIndex": "Metrics",
+          "nodeLineageTag": "a58da793c7250f1b3b8f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.34781770561813,
+            "y": 490.86745117748
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "ea293c919a5238cb1ebe",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 393.81528393694305,
+            "y": -50
+          },
+          "nodeIndex": "DimSeason",
+          "nodeLineageTag": "c472520633a0ff3b429b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 295.91137547700839
+          },
+          "nodeIndex": "DimTeam",
+          "nodeLineageTag": "6c48cbc9b9440d4fbd57",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20771675059279,
+            "y": 152.20858669028121
+          },
+          "nodeIndex": "FactTeamMatch",
+          "nodeLineageTag": "c3ab618093c446b3ebd6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

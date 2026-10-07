@@ -1,0 +1,8 @@
+{
+  "name": "LaLiga Performance Analytics",
+  "dataColors": ["#136F63", "#F39C46", "#335C81", "#8D5A97", "#D1495B", "#6B7280"],
+  "background": "#F7F9FC",
+  "foreground": "#182230",
+  "tableAccent": "#136F63"
+}
+

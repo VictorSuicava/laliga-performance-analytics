@@ -1,0 +1,7 @@
+[project]
+name = "laliga-performance-analytics"
+version = "0.1.0"
+description = "A reproducible LaLiga analytics pipeline and Power BI learning project"
+requires-python = ">=3.10"
+dependencies = []
+

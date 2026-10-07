@@ -1,0 +1,86 @@
+// Create EACH definition below as a separate measure in a dedicated Metrics table.
+// Do not paste the entire file into a single measure editor.
+
+Matches = DISTINCTCOUNT(FactTeamMatch[match_id])
+
+Club Games = COUNTROWS(FactTeamMatch)
+
+Points = SUM(FactTeamMatch[points])
+
+Points per Game = DIVIDE([Points], [Club Games])
+
+Wins = CALCULATE([Club Games], KEEPFILTERS(FactTeamMatch[result] = "W"))
+
+Draws = CALCULATE([Club Games], KEEPFILTERS(FactTeamMatch[result] = "D"))
+
+Losses = CALCULATE([Club Games], KEEPFILTERS(FactTeamMatch[result] = "L"))
+
+Goals For = SUM(FactTeamMatch[goals_for])
+
+Goals Against = SUM(FactTeamMatch[goals_against])
+
+Goal Difference = IF(NOT ISBLANK([Club Games]), [Goals For] - [Goals Against])
+
+Goals per Game = DIVIDE([Goals For], [Club Games])
+
+Shots per Game = AVERAGE(FactTeamMatch[shots_for])
+
+Shots Against per Game = AVERAGE(FactTeamMatch[shots_against])
+
+Shot Data Coverage = DIVIDE(COUNT(FactTeamMatch[shots_for]), [Club Games])
+
+Shot Accuracy =
+VAR PairedRows =
+    FILTER(FactTeamMatch,
+        NOT ISBLANK(FactTeamMatch[shots_for]) &&
+        NOT ISBLANK(FactTeamMatch[shots_on_target_for]))
+RETURN
+    DIVIDE(SUMX(PairedRows, FactTeamMatch[shots_on_target_for]),
+           SUMX(PairedRows, FactTeamMatch[shots_for]))
+
+Goal Conversion =
+VAR ObservedRows = FILTER(FactTeamMatch, NOT ISBLANK(FactTeamMatch[shots_for]))
+RETURN
+    DIVIDE(SUMX(ObservedRows, FactTeamMatch[goals_for]),
+           SUMX(ObservedRows, FactTeamMatch[shots_for]))
+
+Clean Sheet Rate =
+DIVIDE(CALCULATE([Club Games], KEEPFILTERS(FactTeamMatch[goals_against] = 0)), [Club Games])
+
+Cumulative Points =
+VAR LastVisibleDate = MAX(DimDate[date_iso])
+RETURN
+    CALCULATE([Points],
+        FILTER(ALLSELECTED(DimDate), DimDate[date_iso] <= LastVisibleDate))
+
+Previous Season Points =
+VAR SelectedSeason = SELECTEDVALUE(DimSeason[season_key])
+RETURN
+    IF(HASONEVALUE(DimTeam[team_key]) && NOT ISBLANK(SelectedSeason),
+        CALCULATE([Points], REMOVEFILTERS(DimSeason),
+            DimSeason[season_key] = SelectedSeason - 1))
+
+Points Change =
+VAR PriorPoints = [Previous Season Points]
+VAR CurrentPoints = [Points]
+RETURN
+    IF(NOT ISBLANK(PriorPoints) && NOT ISBLANK(CurrentPoints), CurrentPoints - PriorPoints)
+
+Previous Season PPG =
+VAR SelectedSeason = SELECTEDVALUE(DimSeason[season_key])
+RETURN
+    IF(HASONEVALUE(DimTeam[team_key]) && NOT ISBLANK(SelectedSeason),
+        CALCULATE([Points per Game], REMOVEFILTERS(DimSeason),
+            DimSeason[season_key] = SelectedSeason - 1))
+
+PPG Change =
+VAR PriorPPG = [Previous Season PPG]
+VAR CurrentPPG = [Points per Game]
+RETURN
+    IF(NOT ISBLANK(PriorPPG) && NOT ISBLANK(CurrentPPG), CurrentPPG - PriorPPG)
+
+Goals Against per Game = DIVIDE([Goals Against], [Club Games])
+
+Club Label = SELECTEDVALUE(DimTeam[team_name], "Select one club")
+
+

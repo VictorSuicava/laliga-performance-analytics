@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "engine": "Power BI Desktop local Analysis Services",
+  "club_season_aggregates": 40,
+  "club_venue_aggregates": 80,
+  "season_comparisons": 17,
+  "checks": [
+    "Club points, goals, game counts and shooting ratios reconcile with SQLite",
+    "Each club has 19 home and 19 away games per season",
+    "Each season has 380 matches and 760 club appearances",
+    "Missing club-season comparisons remain blank",
+    "Goal difference remains blank for clubs absent from a selected season"
+  ]
+}

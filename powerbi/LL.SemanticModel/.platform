@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "LaLiga"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b707d93-1bf1-436a-993e-9528fae45ae4"
+  }
+}

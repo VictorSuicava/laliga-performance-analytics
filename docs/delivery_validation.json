@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-10-07T10:21:08.451757+00:00",
+  "pipeline_business_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "fresh_checkout_smoke": {
+    "pipeline": "passed",
+    "semantic_model_generation": "passed",
+    "preserve_report_definitions": "passed",
+    "input": "cached source snapshots"
+  },
+  "pbir_generated_definition_schema_validation": {
+    "files_passed": 44,
+    "source": "official Microsoft JSON schemas"
+  },
+  "static_export": {
+    "pages": 4,
+    "visually_inspected_pages": 4,
+    "status": "passed",
+    "scope": "default 2025/26 selections; visible portions of interactive visuals"
+  },
+  "markdown_local_links": "passed",
+  "pbix_zip_integrity": "passed",
+  "artifacts": {
+    "powerbi\\LaLigaPortfolio.pbix": {
+      "bytes": 129204,
+      "sha256": "6439f472f7041b559ff6fe56b563547715b8f5cd3c69cc1928d1a917dda3ab82"
+    },
+    "output\\pdf\\LaLiga.pdf": {
+      "bytes": 724368,
+      "sha256": "8cf021882a0ac70bd80138e21bd479cca09e56f33931aed860a6cb9c99e20aad"
+    },
+    "docs\\images\\laliga-1.png": {
+      "bytes": 159249,
+      "sha256": "cc64837a447c54d425b5b3d9b092129afb2377e987aa26f3050d52c82ab345e7"
+    },
+    "docs\\images\\laliga-2.png": {
+      "bytes": 99751,
+      "sha256": "bb03e6f67fb5357e2816b20bbfc763c33df56547f3b788506de9d6506a9953cd"
+    },
+    "docs\\images\\laliga-3.png": {
+      "bytes": 199598,
+      "sha256": "d980191307255f214835663e634580ad9feab632dd3bf8f4f432e41155811980"
+    },
+    "docs\\images\\laliga-4.png": {
+      "bytes": 163382,
+      "sha256": "0997fe01073dbe1974f49b6b6657bfb3abc1f2872a47431be87ddc79dc72cc68"
+    }
+  }
+}
