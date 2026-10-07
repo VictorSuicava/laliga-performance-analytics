@@ -10,6 +10,7 @@ A portfolio project exploring club performance in LaLiga across **2024/25 and 20
 
 ## Current status
 
+- Published as a public GitHub repository, with screenshots and a four-page dashboard PDF.
 - Python ingestion and validation pipeline: implemented.
 - SQLite star schema, analytical SQL views and Power BI CSV exports: implemented.
 - Power Query scripts, DAX measures and four report pages: implemented and opened in Power BI Desktop.
@@ -45,7 +46,7 @@ For a static view, open the [four-page PDF](output/pdf/LaLiga.pdf). Its tables a
 
 These are descriptive observations, not causal explanations. Read the [findings and reproducible SQL](docs/findings.md) for context and limitations.
 
-The [interview guide](docs/interview_guide.md) provides a two-minute walkthrough and questions about modelling and validation. The [publication guide](docs/github_publication.md) explains how to publish this folder as a standalone repository.
+The [interview guide](docs/interview_guide.md) provides a two-minute walkthrough and questions about modelling and validation. The [publication guide](docs/github_publication.md) covers repository presentation, cloning and shareable artifacts.
 
 Generate a publication archive with `python scripts/package_portfolio.py`. It includes the source, documentation and static previews; the local PBIX, downloaded datasets and machine-specific semantic model are excluded.
 
@@ -113,7 +114,7 @@ Raw and generated datasets are excluded from Git by default. Source attribution 
 
 ## Roadmap
 
-1. Record a short report walkthrough and prepare the GitHub repository for publication.
+1. Record a short report walkthrough for the portfolio.
 2. Evaluate a separate xG source, its coverage and match linkage before integration.
 3. Add a temporally evaluated prediction model as a later data science extension.
 
