@@ -6,7 +6,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
-INCLUDE = ("README.md", ".gitignore", "pyproject.toml", "scripts", "sql", "tests", "docs", "powerbi", "output/pdf")
+INCLUDE = ("README.md", ".gitignore", ".github", "pyproject.toml", "scripts", "sql", "tests", "docs", "powerbi", "output/pdf")
 
 
 def shareable(path: Path) -> bool:

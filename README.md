@@ -1,5 +1,7 @@
 # LaLiga Performance Analytics
 
+[![Business regression tests](https://github.com/VictorSuicava/laliga-performance-analytics/actions/workflows/tests.yml/badge.svg)](https://github.com/VictorSuicava/laliga-performance-analytics/actions/workflows/tests.yml)
+
 A portfolio project exploring club performance in LaLiga across **2024/25 and 2025/26**, with Python, SQL and Power BI.
 
 [GitHub repository](https://github.com/VictorSuicava/laliga-performance-analytics) · [Dashboard PDF](output/pdf/LaLiga.pdf) · [Analytical findings](docs/findings.md)
@@ -12,6 +14,7 @@ A portfolio project exploring club performance in LaLiga across **2024/25 and 20
 
 - Published as a public GitHub repository, with screenshots and a four-page dashboard PDF.
 - Python ingestion and validation pipeline: implemented.
+- GitHub Actions runs the seven business regression tests on Windows and Linux with Python 3.10 and 3.13. Tests use deterministic fixtures and do not download external data.
 - SQLite star schema, analytical SQL views and Power BI CSV exports: implemented.
 - Power Query scripts, DAX measures and four report pages: implemented and opened in Power BI Desktop.
 - Power BI report: `powerbi/LaLigaPortfolio.pbix`, with the data loaded locally.
@@ -114,7 +117,6 @@ Raw and generated datasets are excluded from Git by default. Source attribution 
 
 ## Roadmap
 
-1. Record a short report walkthrough for the portfolio.
-2. Evaluate a separate xG source, its coverage and match linkage before integration.
-3. Add a temporally evaluated prediction model as a later data science extension.
+1. Evaluate a separate xG source, its coverage and match linkage before integration.
+2. Add a temporally evaluated prediction model as a later data science extension.
 
